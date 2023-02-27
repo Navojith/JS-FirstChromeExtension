@@ -1,0 +1,22 @@
+{
+  "name": "firstExtension",
+  "description": "Simple firstExtension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://127.0.0.1:5500/*",
+        "https://quizandsurveymaster.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
